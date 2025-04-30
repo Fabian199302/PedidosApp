@@ -1,24 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PedidosApp
 {
     public static class EntregaFactory
     {
-        public static IMetodoEntrega CrearEntrega(string tipoProducto, bool urgente, double
-        peso)
+        public static IMetodoEntrega CrearEntrega(string tipoProducto, bool urgente, double peso)
         {
+            // Primero verificar la nueva regla de bicicleta
+            if (tipoProducto == "accesorio" && peso < 2 && !urgente)
+                return new EntregaBicicleta();
+
+            // Luego las reglas originales
             if (tipoProducto == "tecnología" && urgente)
                 return new EntregaDron();
-            else if (tipoProducto == "accesorio")
+
+            if (tipoProducto == "accesorio")
                 return new EntregaMoto();
-            else if (tipoProducto == "componente" || peso > 10)
+
+            if (tipoProducto == "componente" || peso > 10)
                 return new EntregaCamion();
-            else
-                return new EntregaMoto(); // valor por defecto
+
+            // Valor por defecto
+            return new EntregaMoto();
         }
     }
 }
+
