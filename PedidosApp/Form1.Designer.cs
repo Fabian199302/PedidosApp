@@ -35,8 +35,12 @@
             this.nudDistancia = new System.Windows.Forms.NumericUpDown();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.dataGridViewpedido = new System.Windows.Forms.DataGridView();
+            this.buttonHistorial = new System.Windows.Forms.Button();
+            this.cmbtipoentrega = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDistancia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewpedido)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCliente
@@ -97,11 +101,40 @@
             this.lblResultado.TabIndex = 6;
             this.lblResultado.Text = "label1";
             // 
+            // dataGridViewpedido
+            // 
+            this.dataGridViewpedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewpedido.Location = new System.Drawing.Point(534, 108);
+            this.dataGridViewpedido.Name = "dataGridViewpedido";
+            this.dataGridViewpedido.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewpedido.TabIndex = 7;
+            // 
+            // buttonHistorial
+            // 
+            this.buttonHistorial.Location = new System.Drawing.Point(513, 280);
+            this.buttonHistorial.Name = "buttonHistorial";
+            this.buttonHistorial.Size = new System.Drawing.Size(75, 23);
+            this.buttonHistorial.TabIndex = 8;
+            this.buttonHistorial.Text = "button1";
+            this.buttonHistorial.UseVisualStyleBackColor = true;
+            this.buttonHistorial.Click += new System.EventHandler(this.buttonHistorial_Click);
+            // 
+            // cmbtipoentrega
+            // 
+            this.cmbtipoentrega.FormattingEnabled = true;
+            this.cmbtipoentrega.Location = new System.Drawing.Point(534, 55);
+            this.cmbtipoentrega.Name = "cmbtipoentrega";
+            this.cmbtipoentrega.Size = new System.Drawing.Size(121, 21);
+            this.cmbtipoentrega.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbtipoentrega);
+            this.Controls.Add(this.buttonHistorial);
+            this.Controls.Add(this.dataGridViewpedido);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.nudDistancia);
@@ -111,9 +144,10 @@
             this.Controls.Add(this.txtCliente);
             this.Name = "Form1";
             this.Text = "Form1";
-           
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDistancia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewpedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +162,9 @@
         private System.Windows.Forms.NumericUpDown nudDistancia;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.DataGridView dataGridViewpedido;
+        private System.Windows.Forms.Button buttonHistorial;
+        private System.Windows.Forms.ComboBox cmbtipoentrega;
     }
 }
 
